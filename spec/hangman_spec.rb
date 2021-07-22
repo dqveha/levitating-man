@@ -16,7 +16,19 @@ describe '#Hangman' do
       man.woah_dude("h")
       man.woah_dude("l")
       man.woah_dude("o")
-      expect(man.puzzle_guess).to(eq([nil,nil,"l","l","o"]))
+      expect(man.puzzle_guess).to(eq(["h",nil,"l","l","o"]))
+    end
+  end
+
+  describe('#win') do
+    it("do win test") do
+      man = Hangman.new("hi woo")
+      man.woah_dude("h")
+      man.woah_dude("i")
+      man.woah_dude("w")
+      man.woah_dude("o")
+      
+      expect(man.win).to(eq(true))
     end
   end
 end
