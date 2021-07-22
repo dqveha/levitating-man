@@ -31,4 +31,12 @@ describe '#Hangman' do
       expect(man.win).to(eq(true))
     end
   end
+
+  describe('#lose') do
+    it("do lose test") do
+      man = Hangman.new("hi woo")
+      8.times { man.check("z") }
+      expect(man.check_fail).to(eq(true))
+    end
+  end
 end

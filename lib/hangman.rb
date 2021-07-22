@@ -21,7 +21,7 @@ class Hangman
   end
 
   def check(letter)
-    if puzzle.includes?(letter)
+    if puzzle.include?(letter)
       @letters_guessed_correctly.push(letter)
     else
       @letters_guessed_wrong.push(letter)
@@ -42,9 +42,12 @@ class Hangman
       false
     end
   end
-  
+
   def lose
-    "You loooooose"
+    if self.tries_left == 0
+      true 
+    else
+      false
+    end
   end
 end
-
